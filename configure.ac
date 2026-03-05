@@ -355,7 +355,12 @@ else
   # Enable module support in source code
   AC_DEFINE( USE_MODULES, 1, [Define if modules are enabled] )
   # Export the module file suffix as LT_MODULE_EXT
-  LT_SYS_MODULE_EXT
+  case "$host_os" in
+    mingw*|cygwin*|msys*) lt_module_ext=.dll ;;
+    darwin*)              lt_module_ext=.dylib ;;
+    *)                    lt_module_ext=.so ;;
+  esac
+  AC_DEFINE_UNQUOTED([LT_MODULE_EXT], ["$lt_module_ext"], [Define the module file extension])
 fi
 AM_CONDITIONAL( [HAVE_MODULES], [test "x$modules" = xenabled] )
 

@@ -349,17 +349,11 @@
 /* System redefines off_t when defining _FILE_OFFSET_BITS to 64. */
 #undef LFS_SENSITIVE
 
-/* Define to the extension used for runtime loadable modules, say, ".so". */
+/* Define the module file extension */
 #undef LT_MODULE_EXT
 
 /* Define to the sub-directory where libtool stores uninstalled libraries. */
 #undef LT_OBJDIR
-
-/* Define to the shared library suffix, say, ".dylib". */
-#undef LT_SHARED_EXT
-
-/* Define to the shared archive member specification, say "(shr.o)". */
-#undef LT_SHARED_LIB_MEMBER
 
 /* Define to for new net123 network stack. */
 #undef NET123
